@@ -9,7 +9,7 @@ import { UpdateClassDto } from './dtos/update-class.dto';
 import { OperatorGuard } from '../guards/operator.guard';
 import { AdminGaurd } from '../guards/admin.guard';
 @ UseInterceptors(new SerializeInterceptor(ClassDto))
-@UseGuards(AuthGuard)
+// @UseGuards(AuthGuard)
 @Controller('class')
 export class ClassController {
     constructor(private readonly classService : ClassService) {}
@@ -35,5 +35,9 @@ export class ClassController {
     @Delete(':id')
     deleteClass(@Param('id' , ParseIntPipe) id : number) {
         return this.classService.delete(id)
+    }
+    @Post('csv')
+    exportCsv() {
+        return this.classService.exportStudentsToCsv()
     }
 }

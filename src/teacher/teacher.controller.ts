@@ -10,6 +10,7 @@ import { UpdateUserDto } from '../users/dtos/update-user.dto';
 import { OperatorGuard } from '../guards/operator.guard';
 import { AdminGaurd } from '../guards/admin.guard';
 
+
 @UseInterceptors(new SerializeInterceptor(TeacherDto))
 @UseGuards(AuthGuard)
 @Controller('teacher')
@@ -37,5 +38,10 @@ export class TeacherController {
     @Delete(':id')
     deleteTeacher(@Param('id' , ParseIntPipe) id : number) {
         return this.teacherService.delete(id)
+    }
+    @UseGuards(AdminGaurd)
+    @Post('csv')
+    exportCsv() {
+        return this.teacherService.exportTeachersToCsv()
     }
 }

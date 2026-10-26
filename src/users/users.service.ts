@@ -25,7 +25,6 @@ export class UsersService {
 
 
 
-
     async login(loginData : LoginDto) {
         // check user if existed
         let user = await this.user.findOne(
@@ -58,5 +57,8 @@ export class UsersService {
     }
     async deleteUser(id: number) {
         return this.user.delete(id);
+    }
+    getUserByEmail(email : string) {
+        return this.user.findOne({where:{email} , relations:{teacher:true}})
     }
 }

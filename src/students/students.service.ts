@@ -1,6 +1,8 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Student } from './student.entity'
+import {join} from "path"
+import { readFile , writeFile } from 'fs/promises';
 import { Repository } from 'typeorm';
 import { CreateStudentDto } from './dtos/create-student.dto';
 import { UsersService } from '../users/users.service';
@@ -93,9 +95,7 @@ export class StudentsService {
         })
         let classEntity = await this.classService.checkCapacity(classId,countStudents)
         getStudent.classes = classEntity
-        console.log(getStudent)
         return this.student.save(getStudent)
     }
-
     
 }
