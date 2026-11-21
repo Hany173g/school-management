@@ -9,6 +9,7 @@ import { AuthGuard } from '../guards/auth.guard';
 import { UpdateUserDto } from '../users/dtos/update-user.dto';
 import { AdminGaurd } from '../guards/admin.guard';
 import { StudentTransferDto } from './dtos/student-transfer.dto';
+
 @UseGuards(AuthGuard)
 @Controller('students')
 @UseInterceptors(new SerializeInterceptor(StudentDto)) // Use Global Interceptor to hide secert prop ^__^                                                                         
@@ -42,5 +43,10 @@ export class StudentsController {
     @Post('transfer/:id')
     StudentTransfer(@Param('id' , ParseIntPipe) id : number  , @Body() body : StudentTransferDto) {
         return this.studentService.studentTransfer(id , body.classId)
+    }
+    @UseGuards(AdminGaurd)
+    @Post('csv')
+    exportStudentsFromCsv() {
+        return this.studentService.exportStudentsFromCsv()
     }
 }

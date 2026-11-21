@@ -1,0 +1,53 @@
+{
+  "faild": [
+    {
+      "reason": "email is duplicate",
+      "line": 2
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 3
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 4
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 5
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 6
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 7
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 8
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 9
+    },
+    {
+      "reason": "email is duplicate",
+      "line": 10
+    },
+    {
+      "reason": "name is empty",
+      "line": 11
+    },
+    {
+      "reason": "email is invaild",
+      "line": 12
+    },
+    {
+      "reason": "email is invaild",
+      "line": 13
+    }
+  ],
+  "success": []
+}

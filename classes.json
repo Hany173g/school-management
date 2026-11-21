@@ -1,0 +1,66 @@
+{
+  "faild": [
+    {
+      "reason": "teacher email not found",
+      "line": 10
+    },
+    {
+      "reason": "capacity not a intger type",
+      "line": 11
+    },
+    {
+      "reason": "capacity not a intger type",
+      "line": 12
+    },
+    {
+      "reason": "teacher email is empty",
+      "line": 13
+    },
+    {
+      "reason": "capacity not a intger type",
+      "line": 15
+    },
+    {
+      "reason": "name is empty",
+      "line": 16
+    }
+  ],
+  "success": [
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 2
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 3
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 4
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 5
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 6
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 7
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 8
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 9
+    },
+    {
+      "reason": "success to create class and pass all validation",
+      "line": 14
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export class Classes {
         onDelete:'RESTRICT' // beacuse we don't want delete teacher if have any classes
     })
     teacher : Teacher
-    @Column()
+    @Column({unique:true})
     name : string
     @Column()
     capacity : number

@@ -11,13 +11,15 @@ import { StudentsModule } from './students/students.module';
 import { TeacherModule } from './teacher/teacher.module';
 import { ClassModule } from './class/class.module';
 import cookieSession from "cookie-session"
+import cookieParser from 'cookie-parser';
 @Module({
   imports: [
-    UsersModule,
+   
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV || 'development'}`,
     }),
+    UsersModule,
     TypeOrmModule.forRootAsync({
       inject:[ConfigService],
       useFactory: (config : ConfigService) => ({
@@ -49,11 +51,8 @@ import cookieSession from "cookie-session"
 export class AppModule implements NestModule {
   constructor(private readonly configService : ConfigService) {}
   configure(consumer : MiddlewareConsumer) {
-    consumer.apply(cookieSession({
-      keys:[this.configService.get<string>('SESSION_SECRET') as string],
-      httpOnly: true,
-      secure:process.env.NODE_ENV === "production"
-    })).forRoutes('*')
+    consumer.apply(cookieParser()).forRoutes('*')
+    
     consumer.apply(CurrentUserMiddleware).forRoutes('*')
   }
 }

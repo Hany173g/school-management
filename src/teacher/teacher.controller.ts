@@ -42,6 +42,6 @@ export class TeacherController {
     @UseGuards(AdminGaurd)
     @Post('csv')
     exportCsv() {
-        return this.teacherService.exportTeachersToCsv()
+        return this.teacherService.exportTeachersFromCsv()
     }
 }
